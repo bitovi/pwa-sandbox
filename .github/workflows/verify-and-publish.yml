@@ -1,4 +1,4 @@
-name: Home App
+name: Verify and Publish
 
 on:
   workflow_dispatch:
@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify-and-publish:
-    name: Verify and Publish
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
 
     steps:
@@ -34,18 +34,38 @@ jobs:
 
       - name: ESLint
         shell: bash
-        continue-on-error: true
         run: npm run lint-eslint
 
       - name: Prettier
         shell: bash
-        continue-on-error: true
         run: npm run lint-prettier
 
       - name: Depcheck
         shell: bash
-        continue-on-error: true
         run: npm run lint-depcheck
+
+      - name: Build
+        shell: bash
+        run: |
+          npm run build
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        shell: bash
+        run: npm ci
 
       - name: Build
         shell: bash
