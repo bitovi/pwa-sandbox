@@ -1,3 +1,7 @@
+import { addStylesheet } from "../common/stylesheet.js"
+
+addStylesheet(import.meta.resolve("./home.css"))
+
 const btn = document.getElementById("share")
 
 btn.addEventListener("click", async () => {

@@ -46,8 +46,7 @@ jobs:
 
       - name: Build
         shell: bash
-        run: |
-          npm run build
+        run: npm run build
 
   publish:
     name: Publish
@@ -71,8 +70,10 @@ jobs:
         shell: bash
         run: |
           npm run build
-          mkdir public/node_modules
-          cp -r node_modules/@fontsource public/node_modules/@fontsource
+          cp package.json package-lock.json public
+          cd public
+          rm -rf node_modules
+          npm ci --omit dev
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
