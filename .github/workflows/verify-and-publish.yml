@@ -1,0 +1,64 @@
+name: Home App
+
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        shell: bash
+        run: npm ci
+
+      - name: ESLint
+        shell: bash
+        continue-on-error: true
+        run: npm run lint-eslint
+
+      - name: Prettier
+        shell: bash
+        continue-on-error: true
+        run: npm run lint-prettier
+
+      - name: Depcheck
+        shell: bash
+        continue-on-error: true
+        run: npm run lint-depcheck
+
+      - name: Build
+        shell: bash
+        run: |
+          npm run build
+          mkdir public/node_modules
+          cp -r node_modules/@fontsource public/node_modules/@fontsource
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v4
