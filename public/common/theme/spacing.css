@@ -1,0 +1,23 @@
+:root {
+  --brand-spacing: 8px;
+
+  --brand-spacing-0: 0;
+  /* --brand-spacing-0-125: calc(var(--brand-spacing) * 0.125); */
+  /* --brand-spacing-0-25: calc(var(--brand-spacing) * 0.25); */
+  /* --brand-spacing-0-5: calc(var(--brand-spacing) * 0.5); */
+  --brand-spacing-1: calc(var(--brand-spacing) * 1);
+  /* --brand-spacing-1-5: calc(var(--brand-spacing) * 1.5); */
+  --brand-spacing-2: calc(var(--brand-spacing) * 2);
+  /* --brand-spacing-2-5: calc(var(--brand-spacing) * 2.5); */
+  --brand-spacing-3: calc(var(--brand-spacing) * 3);
+  /* --brand-spacing-3-5: calc(var(--brand-spacing) * 3.5); */
+  --brand-spacing-4: calc(var(--brand-spacing) * 4);
+  --brand-spacing-5: calc(var(--brand-spacing) * 5);
+  --brand-spacing-6: calc(var(--brand-spacing) * 6);
+  --brand-spacing-7: calc(var(--brand-spacing) * 7);
+  --brand-spacing-8: calc(var(--brand-spacing) * 8);
+  --brand-spacing-9: calc(var(--brand-spacing) * 9);
+  --brand-spacing-10: calc(var(--brand-spacing) * 10);
+  --brand-spacing-11: calc(var(--brand-spacing) * 11);
+  --brand-spacing-12: calc(var(--brand-spacing) * 12);
+}

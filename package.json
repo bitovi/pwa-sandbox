@@ -1,0 +1,30 @@
+{
+  "name": "pwa-sandbox",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "lint": "npm run lint-eslint & npm run lint-prettier & npm run lint-depcheck",
+    "lint-eslint": "eslint .",
+    "lint-prettier": "prettier --check .",
+    "lint-depcheck": "depcheck .",
+    "clean": "rimraf dist",
+    "build": "echo build",
+    "start": "serve"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/poppins": "^5.0.14",
+    "@fontsource/roboto-mono": "^5.0.18"
+  },
+  "devDependencies": {
+    "depcheck": "^1.4.7",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "serve": "^14.2.4"
+  }
+}

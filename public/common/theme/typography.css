@@ -1,0 +1,19 @@
+@import url("../../node_modules/@fontsource/inter/latin-400.css");
+@import url("../../node_modules/@fontsource/inter/latin-700.css");
+@import url("../../node_modules/@fontsource/poppins/latin-700.css");
+@import url("../../node_modules/@fontsource/roboto-mono/latin-400.css");
+
+:root {
+  --brand-typography-title-family: "Poppins";
+  --brand-typography-title-weight: 700;
+  --brand-typography-title-size: 400%;
+  --brand-typography-heading-family: "Poppins";
+  --brand-typography-heading-weight: 700;
+  --brand-typography-heading-size: 200%;
+  --brand-typography-content-family: "Inter";
+  --brand-typography-content-weight: 400;
+  --brand-typography-content-size: 100%;
+  --brand-typography-code-family: "Roboto Mono";
+  --brand-typography-code-weight: 400;
+  --brand-typography-code-size: 100%;
+}

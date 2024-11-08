@@ -1,0 +1,13 @@
+:root {
+  --brand-colors-orange: #f5532d;
+  --brand-colors-teal: #00464a;
+  --brand-colors-teal-light: #00848b;
+  --brand-colors-teal-dark: #023538;
+
+  --white: #ffffff;
+  --black: #000000;
+  --gray-600: #687879;
+  --gray-400: #a3adad;
+  --gray-200: #dfe2e2;
+  --gray-50: #fbfcfc;
+}
