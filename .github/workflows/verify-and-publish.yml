@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify:
-    name: Verify
+  verify-and-publish:
+    name: Verify and Publish
     runs-on: ubuntu-latest
 
     steps:
