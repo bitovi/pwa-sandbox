@@ -1,5 +1,6 @@
 import "./bitovi-logo.js"
 
+import { base } from "./path.js"
 import { teal, tealDark, title } from "./theme/index.js"
 
 export default class SandboxHeader extends HTMLElement {
@@ -72,7 +73,7 @@ export default class SandboxHeader extends HTMLElement {
   render() {
     this.root.innerHTML = `
       <div class="header">
-        <a href="/" class="home">
+        <a href="${base}" class="home">
           <bitovi-logo></bitovi-logo>
           <span>PWA Sandbox</span>
         </a>
