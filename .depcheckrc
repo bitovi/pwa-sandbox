@@ -1,4 +1,5 @@
 ignore-dirs:
   - dist
 ignores:
+  - "@fontsource/*"
   - rimraf

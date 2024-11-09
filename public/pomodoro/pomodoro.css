@@ -1,0 +1,59 @@
+@import url("../common/theme/index.css");
+
+ul.actions {
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 0.5em;
+
+  li {
+    display: inline-block;
+
+    button {
+      padding: 0.125em 0.5em;
+    }
+  }
+}
+
+#start,
+#running,
+#finished {
+  &.hide {
+    display: none;
+  }
+}
+
+#start {
+  ul li button {
+    font-size: 2em;
+  }
+}
+
+#running {
+  #remaining {
+    text-align: center;
+    font-family: var(--brand-typography-code-family);
+    font-weight: var(--brand-typography-code-weight);
+    font-size: 5em;
+  }
+
+  ul li button {
+    font-size: 1.5em;
+  }
+}
+
+#finished {
+  .title {
+    text-align: center;
+    font-family: var(--brand-typography-title-family);
+    font-weight: var(--brand-typography-title-weight);
+    font-size: 2em;
+  }
+
+  ul li button {
+    font-size: 1.5em;
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map | Bitovi PWA Sandbox</title>
+    <link rel="manifest" href="../manifest.json" />
+
+    <link type="text/css" rel="stylesheet" href="./pomodoro.css" />
+  </head>
+  <body>
+    <sandbox-header share-title="Pomodoro Timer"></sandbox-header>
+
+    <div id="banner"></div>
+
+    <div id="start">
+      <ul class="actions">
+        <li><button data-duration="5">5 sec</button></li>
+        <li><button data-duration="60">1 min</button></li>
+        <li><button data-duration="300">5 min</button></li>
+        <li><button data-duration="900">15 min</button></li>
+        <li><button data-duration="1800">30 min</button></li>
+        <li><button data-duration="2700">45 min</button></li>
+        <li><button data-duration="3600">1 hour</button></li>
+      </ul>
+    </div>
+
+    <div id="running" class="hide">
+      <div id="remaining">0:00</div>
+
+      <ul class="actions">
+        <li><button id="pause">Pause</button></li>
+        <li><button id="resume">Resume</button></li>
+      </ul>
+    </div>
+
+    <div id="finished" class="hide">
+      <div class="title">Timer complete!</div>
+
+      <ul class="actions">
+        <li><button id="reset">Reset</button></li>
+      </ul>
+    </div>
+
+    <script type="module" src="./pomodoro.js"></script>
+  </body>
+</html>
