@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bitovi PWA Sandbox</title>
     <link rel="manifest" href="./manifest.json" />
+
+    <link type="text/css" rel="stylesheet" href="./home/home.css" />
   </head>
   <body>
-    <sandbox-header></sandbox-header>
+    <sandbox-header share-title="Bitovi PWA Sandbox"></sandbox-header>
 
-    <h2>Home</h2>
-    <div>Go to <a href="./map/">Map</a></div>
-    <button id="share">Share</button>
+    <bitovi-eggbert></bitovi-eggbert>
 
-    <script type="module" src="./common/sandbox-header.js"></script>
+    <nav>
+      <ul>
+        <li><a href="./map/">Geolocation Demo</a></li>
+      </ul>
+    </nav>
+
     <script type="module" src="./home/home.js"></script>
   </body>
 </html>

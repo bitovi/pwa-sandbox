@@ -1,0 +1,5 @@
+@import url("../common/theme/index.css");
+
+#map {
+  aspect-ratio: 1;
+}
