@@ -3,3 +3,4 @@ ignore-dirs:
 ignores:
   - "@fontsource/*"
   - rimraf
+  - wgpu-matrix

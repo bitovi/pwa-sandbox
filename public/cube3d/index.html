@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Cube | Bitovi PWA Sandbox</title>
+    <link rel="manifest" href="../manifest.json" />
+
+    <link type="text/css" rel="stylesheet" href="./cube3d.css" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "wgpu-matrix": "https://unpkg.com/wgpu-matrix@3.3.0/dist/3.x/wgpu-matrix.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <sandbox-header share-title="PWA 3D Cube"></sandbox-header>
+
+    <canvas id="cube"></canvas>
+
+    <script type="module" src="./cube3d.js"></script>
+  </body>
+</html>
