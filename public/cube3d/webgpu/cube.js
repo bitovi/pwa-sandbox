@@ -3,6 +3,8 @@
 // eslint-disable-next-line import/no-unresolved
 import { mat4, vec3 } from "wgpu-matrix"
 
+import initWasm, { Cube } from "../wasm-cube/wasm_cube.js"
+
 import { loadShaderCode } from "./util.js"
 
 const shaderFragmentCodePromise = loadShaderCode(
@@ -64,10 +66,18 @@ const vertexArray = new Float32Array([
 ]);
 
 export default async function createCube(device, renderer) {
+  await initWasm()
+
   const shaderFragmentCode = await shaderFragmentCodePromise
   const shaderVertexCode = await shaderVertexCodePromise
 
+  const cube = new Cube()
+
   function getViewMatrix(time) {
+    cube.update(time)
+
+    // console.log(cube.get_view_matrix())
+
     const position = vec3.fromValues(0, 0, -5)
     const rotation = vec3.fromValues(Math.sin(time), Math.cos(time), 0)
 

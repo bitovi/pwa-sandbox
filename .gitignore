@@ -5,8 +5,9 @@
 
 # artifacts
 node_modules
-dist
 coverage
+dist
+public/cube3d/wasm-cube
 public/package.json
 public/package-lock.json
 
